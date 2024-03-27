@@ -1,51 +1,29 @@
 # MMMarkdown
-MMMarkdown is an Objective-C framework for converting [Markdown][] to HTML. It is compatible with OS X 10.7+, iOS 8.0+, tvOS, and watchOS.
 
-Unlike other Markdown libraries, MMMarkdown implements an actual parser. It is not a port of the original Perl implementation and does not use regular expressions to transform the input into HTML. MMMarkdown tries to be efficient and minimize memory usage.
+[![CI Status](https://img.shields.io/travis/tospery/MMMarkdown.svg?style=flat)](https://travis-ci.org/tospery/MMMarkdown)
+[![Version](https://img.shields.io/cocoapods/v/MMMarkdown.svg?style=flat)](https://cocoapods.org/pods/MMMarkdown)
+[![License](https://img.shields.io/cocoapods/l/MMMarkdown.svg?style=flat)](https://cocoapods.org/pods/MMMarkdown)
+[![Platform](https://img.shields.io/cocoapods/p/MMMarkdown.svg?style=flat)](https://cocoapods.org/pods/MMMarkdown)
 
-[Markdown]: http://daringfireball.net/projects/markdown/
+## Example
 
-## API
-Using MMMarkdown is simple. The main API is a single class method:
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-    #import <MMMarkdown/MMMarkdown.h>
-    
-    NSError  *error;
-    NSString *markdown   = @"# Example\nWhat a library!";
-    NSString *htmlString = [MMMarkdown HTMLStringWithMarkdown:markdown error:&error];
-    // Returns @"<h1>Example</h1>\n<p>What a library!</p>"
+## Requirements
 
-The markdown string that is passed in must be non-nil.
+## Installation
 
-MMMarkdown also supports a number of Markdown extensions:
+MMMarkdown is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
 
-    #import <MMMarkdown/MMMarkdown.h>
-    
-    NSString *markdown   = @"~~Mistaken~~";
-    NSString *htmlString = [MMMarkdown HTMLStringWithMarkdown:markdown extensions:MMMarkdownExtensionsGitHubFlavored error:NULL];
-    // Returns @"<p><del>Mistaken</del></p>"
-
-## Setup
-Adding MMMarkdown to your project is easy.
-
-If you’d like to use [Carthage](https://github.com/Carthage/Carthage), add the following line to your `Cartfile`:
-
-```
-github "mdiep/MMMarkdown"
+```ruby
+pod 'MMMarkdown'
 ```
 
-Otherwise, you can:
+## Author
 
-0. Add MMMarkdown as a git submodule. (`git submodule add https://github.com/mdiep/MMMarkdown <path>`)
-
-0. Add `MMMarkdown.xcodeproj` to your project or workspace
-
-0. Add `MMMarkdown.framework` to the ”Link Binary with Libraries" section of your project's “Build Phases”.
-
-0. Add `MMMarkdown.framework` to a ”Copy Files” build phase that copies it to the `Frameworks` destination.
+tospery, tospery@gmail.com
 
 ## License
-MMMarkdown is available under the [MIT License][].
 
-[MIT License]: http://opensource.org/licenses/mit-license.php
-
+MMMarkdown is available under the MIT license. See the LICENSE file for more info.
